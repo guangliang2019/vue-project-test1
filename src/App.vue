@@ -1,20 +1,27 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
+import { Tab, TabBar, TabContent, TabBarItem } from './components/tab'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="Hello World!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+    <!--TODO: add tab component here-->
+    <Tab style="display: flex; flex-direction: row" defaultValue="Shadcn">
+      <TabContent value="Arco">
+        <div>Arco Page</div>
+      </TabContent>
+      <TabContent value="Shadcn">
+        <div>Shadcn Page</div>
+      </TabContent>
+      <TabContent value="Material">
+        <div>Material Page</div>
+      </TabContent>
+      <TabBar style="display: flex; flex-direction: column">
+        <TabBarItem style="display: flex" value="Arco">字节 UI </TabBarItem>
+        <TabBarItem style="display: flex" value="Shadcn">开源 UI</TabBarItem>
+        <TabBarItem style="display: flex" value="Material">谷歌 UI</TabBarItem>
+      </TabBar>
+    </Tab>
   </header>
 
   <RouterView />
